@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--Mapper_interface Mapping-->
+<mapper namespace="com.koreait.practice01.user.UserMapper">
+    <!--#과 $의 차이는 #은 문자열 항상 홑따옴표를 붙여주고, 정수엔 안붙임.-->
+    <insert id="insUser" parameterType="UserEntity">
+        INSERT INTO
+            t_user
+        (
+            uid,
+            upw,
+            unm,
+            gender
+        )
+        VALUES
+        (
+            #{uid},
+            #{upw},
+            #{unm},
+            #{gender}
+        )
+    </insert>
+    <select id="selUser" resultType="UserEntity">
+        SELECT *
+        FROM t_user
+        WHERE uid = #{uid}
+    </select>
+
+</mapper>

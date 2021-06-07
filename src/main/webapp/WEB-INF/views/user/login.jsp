@@ -4,6 +4,18 @@
     <title>로그인</title>
 </head>
 <body>
-    <h1>^ㅡ^</h1>
+<h1>로그인</h1>
+<div>${requestScope.errMsg}</div>
+<form action="login" method="post">
+    <div><input type="text" name="uid" placeholder="id" value="zzzz"></div>
+    <div><input type="password" name="upw" placeholder="password" value="1111"></div>
+    <div>
+        <input type="submit" value="Login">
+    </div>
+</form>
+
+<div>
+    <a href="join">join</a>
+</div>
 </body>
 </html>
