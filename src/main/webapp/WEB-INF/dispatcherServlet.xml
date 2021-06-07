@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- This tag registers the DefaultAnnotationHandlerMapping and
+             AnnotationMethodHandlerAdapter beans that are required for Spring MVC  -->
+    <!--MVC패턴과 @Controller를 사용하기 위해 필요한 것?-->
+    <mvc:annotation-driven />
+
+    <!-- Process annotations on registered beans like @Autowired... -->
+    <!--@annotation을 사용하기 위해 필요한 것-->
+    <context:annotation-config />
+
+    <!-- 컴포넌트 스캔
+    @annotation으로 빈 등록할 클래스들을 스캔할 시작 패키지를 설정하는 곳-->
+    <context:component-scan base-package="com.koreait.practice01" />
+
+    <!--사용할 파일명을 완성해주는 객체?-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+</beans>
