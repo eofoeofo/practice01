@@ -11,6 +11,9 @@
     <script defer src="/res/js/boardList.js"></script>
 </head>
 <body>
+<div>
+    <a href="write">글쓰기</a>
+</div>
 <table>
     <tr>
         <th>번호</th>

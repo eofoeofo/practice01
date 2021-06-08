@@ -14,4 +14,11 @@
         ON A.iuser = B.iuser
         ORDER BY iboard DESC;
     </select>
+    <insert id="insBoard">
+        INSERT INTO
+                t_board
+                (title,ctnt,iuser)
+        VALUES
+               (#{title},#{ctnt},#{iuser});
+    </insert>
 </mapper>
