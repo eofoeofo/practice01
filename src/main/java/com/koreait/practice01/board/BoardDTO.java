@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class BoardDTO {
     private int iboard;
+    private int iuser;
     private int startIdx;
     private int recordCnt;
     private int searchType;

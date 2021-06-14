@@ -34,4 +34,25 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
+    @GetMapping("/detail")
+    public String detail(BoardDTO param, Model model) {
+        model.addAttribute("data",service.selBoardDetail(param));
+        return "board/detail";
+    }
+
+    @GetMapping("/delete")
+    public String delete(BoardDTO param) {
+        service.delBoard(param);
+        return "redirect:/board/list";
+    }
+
+    @GetMapping("/update")
+    public String update() {
+        return "board/update";
+    }
+    @PostMapping("/update")
+    public String update(BoardDomain param,Model model) {
+        model.addAttribute("data",service.updBoard(param));
+        return "redirect:/board/list";
+    }
 }

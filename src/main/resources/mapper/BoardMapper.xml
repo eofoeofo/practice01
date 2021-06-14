@@ -21,4 +21,28 @@
         VALUES
                (#{title},#{ctnt},#{iuser});
     </insert>
+    <select id="selBoardDetail" resultType="BoardDomain">
+        SELECT   A.ctnt
+              , A.title
+              , A.regdt
+              , A.iuser
+             , A.iboard
+              , B.unm AS writerNm
+                   FROM t_board A
+              INNER JOIN t_user B
+             ON A.iuser = B.iuser
+        WHERE A.iboard = #{iboard};
+    </select>
+    <delete id="delBoard">
+         DELETE FROM        t_board
+         WHERE    iboard = #{iboard}
+         AND        iuser = #{iuser};
+    </delete>
+    <update id="updBoard">
+        UPDATE          t_board
+        SET    title =  #{title}
+              , ctnt =   #{ctnt}
+        WHERE iboard = #{iboard}
+        AND    iuser =  #{iuser};
+    </update>
 </mapper>
