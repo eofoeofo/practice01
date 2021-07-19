@@ -17,6 +17,7 @@ public class BoardController {
 
     @GetMapping("/list")
     public String selBoardList(Model model) {
+        System.out.println("찍히세요제발 : " + service.selBoardList());
         List<BoardDomain> list = service.selBoardList();
         model.addAttribute("list",list);
         return "board/list";
